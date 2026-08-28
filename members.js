@@ -17,7 +17,7 @@ const MEMBERS = [
   {
     name: "pradheep",
     url: "https://www.pradheep.dev",
-    description: "CS undergrad exploring RL.",
+    description: "CS undergrad, curious ny default.",
   },
 ];
 

@@ -7,10 +7,10 @@ const MEMBERS = [
   {
     name: "sachit",
     url: "https://sachitrame.sh",
-    description: "Personal site.", // TODO: replace with a real one-liner
+    description: "Bleh =p", // TODO: replace with a real one-liner
   },
   {
-    name: "lenaphobic",
+    name: "lena",
     url: "https://lenaphobic.tech",
     description: "Personal site.", // TODO: replace with a real one-liner
   },

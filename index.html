@@ -5,128 +5,174 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CYBERNETICS WEBRING</title>
 <style>
+  /* Silkscreen — self-hosted, no external requests */
+  @font-face {
+    font-family: "Silkscreen";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("fonts/Silkscreen-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Silkscreen";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("fonts/Silkscreen-Bold.ttf") format("truetype");
+  }
   :root {
-    --bg: #0a0a0a;
-    --fg: #c8c8c8;
-    --dim: #6a6a6a;
-    --accent: #00ff9c;
-    --line: #1f1f1f;
+    --bg:    #f4f3f0;   /* off-white, paper */
+    --fg:    #0e0e0e;
+    --dim:   #8a8a8a;
+    --line:  #cfccc6;
+    --pixel: "Silkscreen", "DejaVu Sans Mono", monospace;
   }
 
   * { box-sizing: border-box; }
 
-  html, body {
+  html { background: var(--bg); }
+
+  body {
     margin: 0;
-    padding: 0;
     background: var(--bg);
     color: var(--fg);
     font-family: "DejaVu Sans Mono", "SFMono-Regular", Menlo, Consolas, monospace;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: none;
   }
 
-  body {
-    max-width: 760px;
+  main {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
     margin: 0 auto;
-    padding: 40px 20px 80px;
+    padding: 72px 22px 140px;
   }
 
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { background: var(--accent); color: var(--bg); }
+  a { color: var(--fg); text-decoration: none; }
+  ::selection { background: var(--fg); color: var(--bg); }
 
-  header { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 32px; }
-
+  /* ---- masthead ---- */
+  header { margin-bottom: 8px; }
   h1 {
-    font-size: 15px;
-    font-weight: normal;
-    letter-spacing: 4px;
+    font-family: var(--pixel);
+    font-size: clamp(18px, 5.2vw, 30px);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.25;
     margin: 0;
   }
-  h1 .cursor { color: var(--accent); animation: blink 1.1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
+  .sub { color: var(--dim); font-size: 11px; letter-spacing: 0.06em; margin-top: 12px; }
 
-  .tag { color: var(--dim); font-size: 13px; margin-top: 6px; }
-
-  h2 {
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 2px;
-    color: var(--accent);
-    margin: 40px 0 16px;
-    text-transform: uppercase;
-  }
-  h2::before { content: "// "; color: var(--dim); }
-
-  /* ---- member list ---- */
-  ul.members { list-style: none; margin: 0; padding: 0; }
-  ul.members li { padding: 12px 0; border-bottom: 1px solid var(--line); }
-  ul.members .name { color: var(--fg); }
-  ul.members .name a { color: var(--accent); }
-  ul.members .url { display: block; color: var(--dim); font-size: 12px; margin: 2px 0; word-break: break-all; }
-  ul.members .desc { color: var(--fg); font-size: 13px; }
-  ul.members .idx { color: var(--dim); margin-right: 10px; }
-
-  /* ---- nav bar ---- */
+  /* ---- nav ---- */
   nav.ring {
     display: flex;
-    gap: 0;
-    border: 1px solid var(--line);
-    margin: 8px 0 0;
+    border: 1px solid var(--fg);
+    margin: 28px 0 0;
   }
   nav.ring a {
     flex: 1;
     text-align: center;
-    padding: 12px 8px;
-    border-right: 1px solid var(--line);
+    padding: 12px 6px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
     color: var(--fg);
-    letter-spacing: 1px;
-    font-size: 13px;
+    border-right: 1px solid var(--fg);
   }
-  nav.ring a:last-child { border-right: none; }
-  nav.ring a:hover { background: var(--accent); color: var(--bg); }
+  nav.ring a:last-child { border-right: 0; }
+  nav.ring a:hover { background: var(--fg); color: var(--bg); }
 
-  /* ---- code / badge ---- */
+  /* ---- section headings ---- */
+  h2 {
+    font-family: var(--pixel);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--fg);
+    text-transform: uppercase;
+    margin: 46px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--fg);
+  }
+
+  /* ---- prose ---- */
+  p { margin: 0 0 12px; }
+  p a { border-bottom: 1px solid var(--fg); }
+  p a:hover { background: var(--fg); color: var(--bg); }
+  .dim { color: var(--dim); }
+  code { color: var(--fg); background: rgba(0,0,0,0.06); padding: 0 3px; }
+
+  /* ---- badge ---- */
   pre {
-    background: #000;
+    background: rgba(255,255,255,0.55);
     border: 1px solid var(--line);
     color: var(--fg);
-    padding: 16px;
+    padding: 16px 18px;
     overflow-x: auto;
-    font-size: 12.5px;
+    font-size: 12px;
+    line-height: 1.7;
     margin: 0;
   }
-  pre .tok { color: var(--accent); }
+  pre .tok { color: var(--dim); }
 
   .copy {
     background: transparent;
-    border: 1px solid var(--line);
-    color: var(--dim);
+    border: 1px solid var(--fg);
+    color: var(--fg);
     font-family: inherit;
-    font-size: 12px;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    margin-top: 10px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    padding: 9px 16px;
+    margin-top: 12px;
     cursor: pointer;
   }
-  .copy:hover { border-color: var(--accent); color: var(--accent); }
+  .copy:hover { background: var(--fg); color: var(--bg); }
 
-  p { margin: 0 0 12px; }
-  .dim { color: var(--dim); }
+  /* ---- member list ---- */
+  ul.members { list-style: none; margin: 0; padding: 0; }
+  ul.members li {
+    padding: 14px 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  ul.members li:first-child { border-top: 1px solid var(--line); }
+  ul.members .row1 { display: flex; align-items: baseline; gap: 12px; }
+  ul.members .idx { color: var(--dim); font-size: 12px; }
+  ul.members a.name:hover { background: var(--fg); color: var(--bg); }
+  ul.members .arrow { color: var(--dim); margin-left: auto; }
+  ul.members .url  { display: block; color: var(--dim); font-size: 11px; margin: 4px 0 0 26px; word-break: break-all; }
+  ul.members .desc { display: block; font-size: 12.5px; margin: 5px 0 0 26px; }
 
   footer {
-    margin-top: 56px;
-    padding-top: 20px;
+    margin-top: 60px;
+    padding-top: 16px;
     border-top: 1px solid var(--line);
     color: var(--dim);
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
   }
+
+  /* ---- corner logo ---- */
+  .logo-corner {
+    position: fixed;
+    left: 18px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    z-index: 3;
+    opacity: 0.85;
+    mix-blend-mode: multiply;
+  }
+  @media (max-width: 520px) { .logo-corner { width: 36px; height: 36px; left: 12px; bottom: 12px; } }
 </style>
 </head>
 <body>
 
+<main>
+
 <header>
-  <h1>CYBERNETICS WEBRING<span class="cursor">_</span></h1>
-  <div class="tag">a hand-linked ring of machines &amp; the people wired to them</div>
+  <h1>CYBERNETICS WEBRING</h1>
+  <div class="sub">The webring for artists, electronic musicians and engineers</div>
 </header>
 
 <!-- NAVIGATION ------------------------------------------------------------ -->
@@ -137,44 +183,48 @@
   <a href="?nav=random">RANDOM</a>
 </nav>
 
-<!-- MEMBERS --------------------------------------------------------------- -->
-<h2>Members</h2>
-<ul class="members" id="member-list">
-  <li class="dim">loading ring&hellip;</li>
-</ul>
-
-<!-- HOW TO JOIN ----------------------------------------------------------- -->
-<h2>How to join</h2>
+<!-- ENLIST ---------------------------------------------------------------- -->
+<h2>Enlist</h2>
 <p>
-  The ring is open to personal sites, art projects, zines, and machines that
-  feel like a place. To be added, open an issue with your
-  <span class="dim">name</span>, <span class="dim">url</span>, and a
-  <span class="dim">one-line description</span>:
+  If you're an artist, electronic musician, and/or engineer and want to join
+  us, open an issue with your <span class="dim">name</span>,
+  <span class="dim">url</span>, and a <span class="dim">one-line description</span>.
+  If you'd rather, send a PR adding yourself to <code>members.js</code>.
 </p>
 <p>
-  &raquo; <a href="https://github.com/cyb3r17/Cybernetics-Webring/issues/new" target="_blank" rel="noopener">github.com/cyb3r17/Cybernetics-Webring/issues</a>
+  &raquo; <a href="https://github.com/cyb3r17/Cybernetics-Webring/issues/new" target="_blank" rel="noopener">open an issue</a>
+  &nbsp;/&nbsp;
+  <a href="https://github.com/cyb3r17/Cybernetics-Webring/blob/main/members.js" target="_blank" rel="noopener">edit members.js</a>
 </p>
-<p class="dim">Then paste the badge below onto your site so the ring stays whole.</p>
 
 <!-- BADGE ----------------------------------------------------------------- -->
 <h2>Badge</h2>
-<p class="dim">Replace <code>YOURSITE</code> with your registered url. Drop this anywhere on your page:</p>
-<pre id="badge-code"><span class="tok">&lt;a</span> href=<span class="tok">"[RING_URL]?nav=prev&amp;from=YOURSITE"</span><span class="tok">&gt;</span>&larr;<span class="tok">&lt;/a&gt;</span>
-<span class="tok">&lt;a</span> href=<span class="tok">"[RING_URL]"</span><span class="tok">&gt;</span>CYBERNETICS WEBRING<span class="tok">&lt;/a&gt;</span>
-<span class="tok">&lt;a</span> href=<span class="tok">"[RING_URL]?nav=next&amp;from=YOURSITE"</span><span class="tok">&gt;</span>&rarr;<span class="tok">&lt;/a&gt;</span></pre>
-<button class="copy" id="copy-badge">[ copy badge ]</button>
+<p class="dim">swap <code>YOURSITE</code> for your registered url, then drop it anywhere on your page:</p>
+<pre id="badge-code"><span class="tok">&lt;a</span> href=<span class="tok">"https://cyb3r17.github.io/Cybernetics-Webring/?nav=prev&amp;from=YOURSITE"</span><span class="tok">&gt;</span>&larr;<span class="tok">&lt;/a&gt;</span>
+<span class="tok">&lt;a</span> href=<span class="tok">"https://cyb3r17.github.io/Cybernetics-Webring/"</span><span class="tok">&gt;</span>CYBERNETICS WEBRING<span class="tok">&lt;/a&gt;</span>
+<span class="tok">&lt;a</span> href=<span class="tok">"https://cyb3r17.github.io/Cybernetics-Webring/?nav=next&amp;from=YOURSITE"</span><span class="tok">&gt;</span>&rarr;<span class="tok">&lt;/a&gt;</span></pre>
+<button class="copy" id="copy-badge">[ COPY BADGE ]</button>
+
+<!-- MEMBERS --------------------------------------------------------------- -->
+<h2>Members</h2>
+<ul class="members" id="member-list">
+  <li class="dim">loading&hellip;</li>
+</ul>
 
 <footer>
-  <span id="count">&mdash;</span> nodes online &middot; no trackers &middot; no javascript required to visit members &middot;
-  <span class="dim">hand-coded, no framework</span>
+  <span id="count">--</span> nodes
 </footer>
+
+</main>
+
+<!-- corner mark -->
+<img class="logo-corner" src="Aphex_Twin_logo.svg" alt="" />
 
 <script src="members.js"></script>
 <script src="nav.js"></script>
 <script>
-  // The canonical URL of this hub, used to bake a real URL into the badge.
-  // Pinned to the GitHub Pages deployment so the copied snippet is correct
-  // no matter where a member views this page from.
+  // The canonical URL of this hub, used to bake a real URL into the copied
+  // badge. Matches the GitHub Pages deployment.
   var RING_URL = "https://cyb3r17.github.io/Cybernetics-Webring/";
 
   // --- render member list -------------------------------------------------
@@ -188,20 +238,28 @@
     list.innerHTML = "";
     members.forEach(function (m, i) {
       var li = document.createElement("li");
-      var num = String(i + 1).padStart(2, "0");
 
-      var name = document.createElement("span");
-      name.className = "name";
+      var row1 = document.createElement("div");
+      row1.className = "row1";
+
       var idx = document.createElement("span");
       idx.className = "idx";
-      idx.textContent = num;
+      idx.textContent = "[" + String(i).padStart(2, "0") + "]";
+
       var link = document.createElement("a");
+      link.className = "name";
       link.href = m.url;
       link.target = "_blank";
       link.rel = "noopener";
       link.textContent = m.name;
-      name.appendChild(idx);
-      name.appendChild(link);
+
+      var arrow = document.createElement("span");
+      arrow.className = "arrow";
+      arrow.textContent = "→";
+
+      row1.appendChild(idx);
+      row1.appendChild(link);
+      row1.appendChild(arrow);
 
       var url = document.createElement("span");
       url.className = "url";
@@ -211,13 +269,13 @@
       desc.className = "desc";
       desc.textContent = m.description || "";
 
-      li.appendChild(name);
+      li.appendChild(row1);
       li.appendChild(url);
       li.appendChild(desc);
       list.appendChild(li);
     });
 
-    document.getElementById("count").textContent = members.length;
+    document.getElementById("count").textContent = String(members.length).padStart(2, "0");
   })();
 
   // --- copy badge ---------------------------------------------------------
@@ -230,8 +288,8 @@
 
     btn.addEventListener("click", function () {
       function done() {
-        btn.textContent = "[ copied ]";
-        setTimeout(function () { btn.textContent = "[ copy badge ]"; }, 1500);
+        btn.textContent = "[ COPIED ]";
+        setTimeout(function () { btn.textContent = "[ COPY BADGE ]"; }, 1500);
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(snippet).then(done, fallback);

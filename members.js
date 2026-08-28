@@ -12,7 +12,7 @@ const MEMBERS = [
   {
     name: "lena",
     url: "https://lenaphobic.tech",
-    description: "Personal site.", // TODO: replace with a real one-liner
+    description: "personal site on a fake desktop (silicon inside)", 
   },
   {
     name: "pradheep",

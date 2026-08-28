@@ -14,6 +14,11 @@ const MEMBERS = [
     url: "https://lenaphobic.tech",
     description: "Personal site.", // TODO: replace with a real one-liner
   },
+  {
+    name: "pradheep",
+    url: "https://www.pradheep.dev",
+    description: "CS undergrad exploring RL.",
+  },
 ];
 
 // Export for both browser (global) and any module tooling.

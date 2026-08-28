@@ -1,0 +1,22 @@
+// Cybernetics Webring — member registry
+// Each member: { name, url, description }
+// `url` is the canonical origin (no trailing slash) used to match ?from=
+// and to compute prev/next neighbors in ring order.
+
+const MEMBERS = [
+  {
+    name: "sachit",
+    url: "https://sachitrame.sh",
+    description: "Personal site.", // TODO: replace with a real one-liner
+  },
+  {
+    name: "lenaphobic",
+    url: "https://lenaphobic.tech",
+    description: "Personal site.", // TODO: replace with a real one-liner
+  },
+];
+
+// Export for both browser (global) and any module tooling.
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = MEMBERS;
+}

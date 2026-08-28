@@ -19,6 +19,11 @@ const MEMBERS = [
     url: "https://www.pradheep.dev",
     description: "CS undergrad, curious by default.",
   },
+  {
+    name: "praneel",
+    url: "https://praneelk.tech",
+    description: "プラニール — AI infra & design eng. Sites that make noise.",
+  },
 ];
 
 // Export for both browser (global) and any module tooling.

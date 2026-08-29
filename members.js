@@ -19,11 +19,11 @@ const MEMBERS = [
     url: "https://www.pradheep.dev",
     description: "CS undergrad, curious by default.",
   },
-  {
+ /* {
     name: "praneel",
     url: "https://praneelk.tech",
     description: "プラニール — AI infra & design eng. Sites that make noise.",
-  },
+  }, webring broken because of no wdiget!!*/
   {
     name: "haley",
     url: "https://haleyher.github.io/haleyher-website/",

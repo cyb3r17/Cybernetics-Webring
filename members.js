@@ -24,6 +24,11 @@ const MEMBERS = [
     url: "https://praneelk.tech",
     description: "プラニール — AI infra & design eng. Sites that make noise.",
   },
+  {
+    name: "haley",
+    url: "https://haleyher.github.io/haleyher-website/",
+    description: "cassette-themed personal website.",
+  },
 ];
 
 // Export for both browser (global) and any module tooling.

@@ -29,6 +29,11 @@ const MEMBERS = [
     url: "https://haleyher.github.io/haleyher-website/",
     description: "cassette-themed personal website.",
   },
+  {
+    name: "john",
+    url: "https://johntanaristy.com/",
+    description: "personal site :)",
+  },
 ];
 
 // Export for both browser (global) and any module tooling.

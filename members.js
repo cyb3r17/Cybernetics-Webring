@@ -34,6 +34,11 @@ const MEMBERS = [
     url: "https://johntanaristy.com/",
     description: "personal site :)",
   },
+  {
+    name: "Vinci",
+    url: "https://anemoia.moe/",
+    description: "i love old web"
+  }
 ];
 
 // Export for both browser (global) and any module tooling.

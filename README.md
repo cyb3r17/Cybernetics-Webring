@@ -10,7 +10,6 @@ Some criteria for joining the webring:
 - all websites MUST be personal websites!
 - no illegal, nsfw, or gory content is allowed
 - proof of building cool shit (music, software, electronics, art, etc) on your website!
-- be 16+ (there's no way to enforce this but yeah)
 - be interesting! (subjective, admitted at maintainer discretion)
 - no overt politics/activism content (we're trying to maintain a curated list of creators, there's plenty of other webrings for this!)
 - site must be actively maintained (updated within the last year or so)

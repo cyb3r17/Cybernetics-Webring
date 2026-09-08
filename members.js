@@ -12,7 +12,7 @@ const MEMBERS = [
   {
     name: "lena",
     url: "https://lenaphobic.tech",
-    description: "personal site on a fake desktop (silicon inside)", 
+    description: "personal site on a fake desktop (silicon inside)",
   },
   {
     name: "pradheep",
@@ -35,6 +35,10 @@ const MEMBERS = [
     description: "personal site :)",
   },
   {
+    name: "wade",
+    url: "https://grimridge.net/",
+    description: "murthy supreme.",
+  },
     name: "Vinci",
     url: "https://anemoia.moe/",
     description: "i love old web"

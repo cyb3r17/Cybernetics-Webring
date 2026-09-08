@@ -38,6 +38,11 @@ const MEMBERS = [
     name: "Vinci",
     url: "https://anemoia.moe/",
     description: "i love old web"
+  },
+    {
+    name: "wade",
+    url: "https://grimridge.net/",
+    description: "murthy supreme.",
   }
 ];
 

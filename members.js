@@ -7,7 +7,7 @@ const MEMBERS = [
   {
     name: "sachit",
     url: "https://sachitrame.sh",
-    description: "Bleh =p", // TODO: replace with a real one-liner
+    description: "world's best computer vision engineer =p", // TODO: replace with a real one-liner
   },
   {
     name: "lena",
@@ -39,6 +39,15 @@ const MEMBERS = [
     url: "https://grimridge.net/",
     description: "murthy supreme.",
   },
+    name: "Vinci",
+    url: "https://anemoia.moe/",
+    description: "i love old web"
+  },
+    {
+    name: "wade",
+    url: "https://grimridge.net/",
+    description: "murthy supreme.",
+  }
 ];
 
 // Export for both browser (global) and any module tooling.

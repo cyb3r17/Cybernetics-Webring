@@ -43,6 +43,11 @@ description: "i love old web"
     name: "wade",
     url: "https://grimridge.net/",
     description: "murthy supreme.",
+},
+{
+name: "0xf0xx0",
+url: "https://0xf0xx0.eth.limo",
+description: "a lostkins corner of the internet.",
 }
 ];
 
